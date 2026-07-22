@@ -1,0 +1,70 @@
+{
+	"empty": {
+		"pos": [0, 0]
+	},
+	"basic_wall": {
+		"pos": [1, 0]
+	},
+	"warning_sign": {
+		"pos": [2, 0]
+	}, 
+	"grass_floor": {
+		"pos": [3, 0]
+	},
+	"netherrack_floor": {
+		"pos": [4, 0]
+	},
+	"grass_bottom_corner": {
+		"pos": [5, 0]
+	},
+	"grass_side": {
+		"pos": [6, 0]
+	},
+	"grass_bottom": {
+		"pos": [7, 0]
+	},
+	"grass_top": {
+		"pos": [8, 0]
+	},
+	"grass_top_corner": {
+		"pos": [9, 0]
+	},
+	"flower_blue": {
+		"pos": [10, 0]
+	},
+	"leaves": {
+		"pos": [11, 0]
+	},
+	"water": {
+		"pos": [12, 0]
+	},
+	"basic_flooring": {
+		"pos": [13, 0]
+	},
+	"tree": {
+		"display_name": "Tree",
+		"object": true,
+		"group": [
+			{
+				"tile": "tree_top",
+				"offset": [0, -1]
+			},
+			{
+				"tile": "tree_bottom",
+				"offset": [0, 0]
+			}
+		],
+		"collision": {
+			"offset": [0, 0],
+			"size": [16, 16]
+		}
+	},
+	"tree_top": {
+		"pos": [14, 0],
+		"hidden": true
+	},
+	"tree_bottom": {
+		"pos": [15, 0],
+		"hidden": true
+	},
+}

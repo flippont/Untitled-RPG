@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bcfbn5jbl0ova"]
+
+[ext_resource type="Script" uid="uid://d0xcqkqqfmaii" path="res://editor/editor.gd" id="1_6j37k"]
+[ext_resource type="Script" uid="uid://c3ashwq4cuxjn" path="res://editor/editor_label.gd" id="1_j82do"]
+[ext_resource type="Script" uid="uid://g44e22kuxdph" path="res://editor/editor_camera.gd" id="2_6j37k"]
+[ext_resource type="Script" uid="uid://d26qkr1rhra0a" path="res://management/mesh_manager.gd" id="3_6hpnh"]
+[ext_resource type="Texture2D" uid="uid://bc4sxadmy3xcy" path="res://assets/atlases/tileset.png" id="4_swf4p"]
+[ext_resource type="Script" uid="uid://kgo6ldvqi6do" path="res://editor/cursor.gd" id="6_6hpnh"]
+[ext_resource type="FontFile" uid="uid://vla3bli6pcnq" path="res://assets/fonts/pixelprecision.ttf" id="6_swf4p"]
+
+[node name="Editor" type="Node2D" unique_id=536171302]
+y_sort_enabled = true
+script = ExtResource("1_6j37k")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=846969931]
+anchor_mode = 0
+script = ExtResource("2_6j37k")
+
+[node name="MeshManager" type="Node2D" parent="." unique_id=1026134657 node_paths=PackedStringArray("object_root", "collision_root")]
+y_sort_enabled = true
+texture_filter = 1
+script = ExtResource("3_6hpnh")
+atlas_texture = ExtResource("4_swf4p")
+object_root = NodePath("../Objects")
+collision_root = NodePath("../Colliders")
+
+[node name="Cursor" type="Node2D" parent="." unique_id=1135232192]
+texture_filter = 1
+script = ExtResource("6_6hpnh")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1890675288]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1121886760]
+texture_filter = 1
+offset_right = 400.5
+offset_bottom = 183.0
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("6_swf4p")
+text = "DEBUG MODE"
+script = ExtResource("1_j82do")
+metadata/_edit_use_anchors_ = true
+
+[node name="Objects" type="Node2D" parent="." unique_id=701600046]
+
+[node name="Colliders" type="Node2D" parent="." unique_id=884683996]

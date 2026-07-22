@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bqdvsjn7d0ayq"]
+
+[ext_resource type="Script" uid="uid://tra22flv68s1" path="res://game/game.gd" id="1_h7iqs"]
+[ext_resource type="PackedScene" uid="uid://dnvx8diwpib8u" path="res://player/player.tscn" id="1_l1rk1"]
+[ext_resource type="Script" uid="uid://d26qkr1rhra0a" path="res://management/mesh_manager.gd" id="2_vasa2"]
+[ext_resource type="Texture2D" uid="uid://bc4sxadmy3xcy" path="res://assets/atlases/tileset.png" id="4_4fuuu"]
+[ext_resource type="Script" uid="uid://bwvqdbjbl3bse" path="res://game/camera.gd" id="5_dxrkv"]
+
+[node name="World" type="Node2D" unique_id=1915316177]
+script = ExtResource("1_h7iqs")
+
+[node name="MeshManager" type="Node2D" parent="." unique_id=1017184459 node_paths=PackedStringArray("object_root", "collision_root")]
+texture_filter = 1
+script = ExtResource("2_vasa2")
+atlas_texture = ExtResource("4_4fuuu")
+object_root = NodePath("../Entities")
+collision_root = NodePath("../Colliders")
+
+[node name="Entities" type="Node2D" parent="." unique_id=1416166568]
+y_sort_enabled = true
+
+[node name="CharacterBody2D" parent="Entities" unique_id=167330115 instance=ExtResource("1_l1rk1")]
+z_as_relative = false
+y_sort_enabled = false
+
+[node name="Camera2D" type="Camera2D" parent="Entities/CharacterBody2D" unique_id=52167173 node_paths=PackedStringArray("map")]
+zoom = Vector2(2, 2)
+script = ExtResource("5_dxrkv")
+map = NodePath("../../../MeshManager")
+
+[node name="Colliders" type="Node2D" parent="." unique_id=362438040]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=838373196]
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer" unique_id=1736223469]
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true

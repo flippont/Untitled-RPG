@@ -1,0 +1,28 @@
+{
+	"shotgun": {
+		"name": "Shotgun",
+		"type": "weapon",
+		"weapon_class": "Shotgun",
+		"damage": 4,
+		"pellets": 8,
+		"spread": 12,
+		"projectile_speed": 900,
+		"splash_radius": 0,
+		"pos": [2, 0]
+	},
+	"rocket_launcher": {
+		"name": "Rocket Launcher",
+		"type": "weapon",
+		"weapon_class": "RocketLauncher",
+		"damage": 60,
+		"projectile_speed": 500,
+		"splash_radius": 128,
+		"pos": [1, 0]
+	},
+	"apple": {
+		"name": "Apple",
+		"type": "consumable",
+		"heal": 50,
+		"pos": [6, 0]
+	}
+}
